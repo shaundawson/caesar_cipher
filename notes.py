@@ -19,4 +19,8 @@ def greet_with(name, location):
     print(f"Hello {name}")
     print(f"What is it like in {location}?")
 
+#Call function with positional argument
 greet_with("Shaun", "Florida")
+    
+#Call funtion with a keyword argument
+greet_with(location="Florida", name = "Shaun")
