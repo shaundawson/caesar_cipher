@@ -60,15 +60,41 @@
 #     else:
 #         print(f"{number} is not a prime number")
 
-def prime_checker(number):
-    is_prime = True
-    for i in range(2, number):
-        if number % i == 0:
-            is_prime = False
-    if is_prime == True:
-        print(f"{number} is a prime number")
-    else: 
-        print(f"{number} is not a prime number")    
+# def prime_checker(number):
+#     is_prime = True
+#     for i in range(2, number):
+#         if number % i == 0:
+#             is_prime = False
+#     if is_prime == True:
+#         print(f"{number} is a prime number")
+#     else: 
+#         print(f"{number} is not a prime number")    
 
-n = int(input("Check this number: "))
-prime_checker(number=n)
+# n = int(input("Check this number: "))
+# prime_checker(number=n)
+
+
+# Exercise - Caesar Cipher
+def encrypt(plain_text, shift_amount):
+    cipher_text = ""
+    for letter in plain_text:
+        position = alphabet.index(letter)
+        new_position = position + shift_amount
+        new_letter = alphabet[new_position]
+        cipher_text += new_letter
+    print(f"The encoded text is {cipher_text}")
+        
+
+def decrypt(cipher_text, shift_amount):
+    plain_text = ""
+    for letter in cipher_text:
+        position = alphabet.index(letter)
+        new_position = position - shift_amount
+        new_letter = alphabet[new_position]
+        plain_text += new_letter
+    print(f"The decoded text is {plain_text}")
+
+if direction == "encode":
+    encrypt(plain_text=text, shift_amount = shift)
+else:
+    decrypt(cipher_text=text, shift_amount = shift)
