@@ -45,20 +45,30 @@
 #EXERCISE: PRIME NUMBER CHECKER
 #Prime numbers are numbers that can only be cleanly divided by themselves and 1.  Write a function that checks whether the number passed into it is a prime number or not.
 
-def prime_checker(number):
-    if number > 1:
-    # Iterate from 2 to n / 2
-        for i in range(2, int(number/2)+1): 
-            # If num is divisible by any number between
-            # 2 and n / 2, it is not prime
-            if (number % i) == 0:
-                print(f"{number} is not a prime number")
-                break
-        else:
-            print(f"{number} is a prime number")
+# def prime_checker(number):
+#     if number > 1:
+#     # Iterate from 2 to n / 2
+#         for i in range(2, int(number/2)+1): 
+#             # If num is divisible by any number between
+#             # 2 and n / 2, it is not prime
+#             if (number % i) == 0:
+#                 print(f"{number} is not a prime number")
+#                 break
+#         else:
+#             print(f"{number} is a prime number")
   
-    else:
-        print(f"{number} is not a prime number")
+#     else:
+#         print(f"{number} is not a prime number")
+
+def prime_checker(number):
+    is_prime = True
+    for i in range(2, number):
+        if number % i == 0:
+            is_prime = False
+    if is_prime == True:
+        print(f"{number} is a prime number")
+    else: 
+        print(f"{number} is not a prime number")    
 
 n = int(input("Check this number: "))
 prime_checker(number=n)
